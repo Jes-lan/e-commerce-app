@@ -1,18 +1,22 @@
 from flask import Flask, render_template
+from werkzeug.utils import quote  # Instead of url_quote
 
 # Initialize the Flask application
 app = Flask(__name__)
 
 # Sample product data
-PRODUCTS = [
+products = [
     {'id': 1, 'name': 'Telefon', 'price': 1000},
     {'id': 2, 'name': 'Laptop', 'price': 5000}
 ]
 
-@app.route('/')
-def home():
-    """Render the home page with the list of products."""
-    return render_template('index.html', products=PRODUCTS)
+# Initialize the cart
+cart = []
+
+@app.route('/add/<int:product_id>')
+def add_to_cart(product_id):
+    product = next((p for p in products if p['id'] == product_id), None)
+
 
 if __name__ == '__main__':
     # Run the application
