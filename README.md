@@ -24,7 +24,7 @@ The `e-commerce-app` is a modern web application designed to provide a seamless 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/e-commerce-app.git
+   git clone https://github.com/Jes-lan/e-commerce-app.git
    ```
 2. Navigate to the project directory:
    ```bash
